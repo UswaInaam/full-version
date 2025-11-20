@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\PaginationController;
-use App\Http\Controllers\Controller;
+
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\CartItemController;
 use App\Http\Controllers\CategoryController;
@@ -49,18 +49,10 @@ Route::post('/logout',[AuthController::class,'logout'])->name('logout')->middlew
 Route::get('/lang/{lang}',[ LanguageController::class,'switchLang'])->name('switch_lang');
 Route::get('/pagination-per-page/{per_page}',[ PaginationController::class,'set_pagination_per_page'])->name('pagination_per_page');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 // require __DIR__ .'/auth.php';
 
-Route::get('/controller', [Controller::class, 'index']);
-Route::post('/controller/store', [Controller::class, 'store']);
-Route::put('/controller/update', [Controller::class, 'update']);
-Route::delete('/controller/delete', [Controller::class, 'delete']);
-Route::get('/controller/destroy', [Controller::class, 'destroy']);
 
-Route::get('/controller/edit', [Controller::class, 'edit']);
 
 Route::get('/products', [ProductController::class, 'index'])->name('getalproducts');
 Route::post('/product/store', [ProductController::class, 'store'])->name('store.product');
