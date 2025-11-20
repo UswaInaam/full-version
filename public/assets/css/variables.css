@@ -5,7 +5,7 @@
     --accent:#ffffff;
     --color-menu:#404040;
     --color-menu-hover:#5840FF;
-    --color-menu-active:#5840FF;
+    --color-menu-active:#ff40a9;
     --color-menu-bg-opacity:rgb(var(--color-primary-rgba), .10);
     --header-bg:white;
     --sidebar-bg:white;
@@ -24,8 +24,8 @@
     --color-footer-divider:#353b58;
     --color-footer-title:var(--color-white);
     --color-footer-link-hover:var(--color-white);
-    --color-primary:#8231D3;
-    --color-secondary:#5840FF;
+    --color-primary:#d33182;
+    --color-secondary:#6ed41a;
     --color-success:#01B81A;
     --color-info:#00AAFF;
     --color-warning:#FA8B0C;
