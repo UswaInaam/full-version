@@ -509,5 +509,12 @@
                 </button>
             </div>
         @endif
+        <li>
+         <a href="{{ route('getalproducts') }}">
+
+         <i class="nav-icon la la-opencart"></i>
+          products
+         </a>
+        </li>
     </ul>
 </div>
