@@ -11,7 +11,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $title="All products";
+        $description="List of all products";
+        return view('admin.products.index');
     }
 
     /**
