@@ -13,7 +13,7 @@ class ProductController extends Controller
     {
         $title="All products";
         $description="List of all products";
-        return view('admin.products.index');
+        return view('admin.products.index',compact('title','description'));
     }
 
     /**
@@ -21,7 +21,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $title="All products";
+        $description="List of all products";
+        return view('admin.products.create',compact('title','description'));
     }
 
     /**
@@ -66,9 +68,12 @@ class ProductController extends Controller
      */
     public function edit(string $slug)
     {
+        $title="All products";
+        $description="List of all products";
+
          $Product=Product::where('slug',$slug)->firstorFail();
          if($Product){
-            return response()->json($Product);
+ return view('admin.products.edit',compact('title','description'));
         }
         else{
             return response()->json(['message'=>'Product not found'],404);
