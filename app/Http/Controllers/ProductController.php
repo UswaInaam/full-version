@@ -11,9 +11,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $title="All products";
-        $description="List of all products";
-        return view('admin.products.index',compact('title','description'));
+        $title = "All products";
+        $description = "List of all products";
+        return view('admin.products.index', compact('title', 'description'));
     }
 
     /**
@@ -21,9 +21,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $title="All products";
-        $description="List of all products";
-        return view('admin.products.create',compact('title','description'));
+        $title = "All products";
+        $description = "List of all products";
+        return view('admin.products.create', compact('title', 'description'));
     }
 
     /**
@@ -34,25 +34,24 @@ class ProductController extends Controller
         $validated = $request->validate([
             // validation rules
             'category_id' => 'required|exists:categories,id',
-            'sub_category_id'=>'required|exists:sub_categories,id',
-            'name'=>'required|string|max:255|min:5',
-            'slug'=>'required|string|max:255|min:5|unique:products,slug',
-            'sku'=>'required|string|max:255|min:10|unique:products,sku',
-            'price'=>'required|numeric|min:0|max:100000',
-            'dscount_price'=>'required|integer|min:0|max:100000|',
-            'stock'=>'required|integer|min:0',
-            'short_description'=>'nullable|string|min:100',
-            'long_description'=>'nullable|string',
-            'status'=>'required|boolean',
-            'featured'=>'required|boolean',
+            'sub_category_id' => 'required|exists:sub_categories,id',
+            'name' => 'required|string|max:255|min:5',
+            'slug' => 'required|string|max:255|min:5|unique:products,slug',
+            'sku' => 'required|string|max:255|min:10|unique:products,sku',
+            'price' => 'required|numeric|min:0|max:100000',
+            'dscount_price' => 'required|integer|min:0|max:100000|',
+            'stock' => 'required|integer|min:0',
+            'short_description' => 'nullable|string|min:100',
+            'long_description' => 'nullable|string',
+            'status' => 'required|boolean',
+            'featured' => 'required|boolean',
         ]);
-           $result=Product::create($validated);
-           if($result){
-           return response()->json(['message'=>'product is created successfully'],201);
-           }
-           else{
-             return response()->json(['message'=>'product creation failed'],500);
-           }
+        $result = Product::create($validated);
+        if ($result) {
+            return response()->json(['message' => 'product is created successfully'], 201);
+        } else {
+            return response()->json(['message' => 'product creation failed'], 500);
+        }
     }
 
     /**
@@ -68,15 +67,14 @@ class ProductController extends Controller
      */
     public function edit(string $slug)
     {
-        $title="All products";
-        $description="List of all products";
+        $title = "All products";
+        $description = "List of all products";
 
-         $Product=Product::where('slug',$slug)->firstorFail();
-         if($Product){
- return view('admin.products.edit',compact('title','description'));
-        }
-        else{
-            return response()->json(['message'=>'Product not found'],404);
+        $Product = Product::where('slug', $slug)->firstorFail();
+        if ($Product) {
+            return view('admin.products.edit', compact('title', 'description'));
+        } else {
+            return response()->json(['message' => 'Product not found'], 404);
         }
     }
 
@@ -85,20 +83,20 @@ class ProductController extends Controller
      */
     public function update(Request $request, string $slug)
     {
-         $validated = $request->validate([
+        $validated = $request->validate([
             // validation rules
             'category_id' => 'nullable|exists:categories,id',
-            'sub_category_id'=>'nullable|exists:sub_categories,id',
-            'name'=>'nullable|string|max:255|min:5',
-            'slug'=>'nullable|string|max:255|min:5|unique:products,slug',
-            'sku'=>'nullable|string|max:255|min:10|unique:products,sku',
-            'price'=>'nullable|numeric|min:0|max:100000',
-            'dscount_price'=>'nullable|integer|min:0|max:100000|',
-            'stock'=>'nullable|integer|min:0',
-            'short_description'=>'nullable|string|min:100',
-            'long_description'=>'nullable|string',
-            'status'=>'boolean',
-            'featured'=>'boolean',
+            'sub_category_id' => 'nullable|exists:sub_categories,id',
+            'name' => 'nullable|string|max:255|min:5',
+            'slug' => 'nullable|string|max:255|min:5|unique:products,slug',
+            'sku' => 'nullable|string|max:255|min:10|unique:products,sku',
+            'price' => 'nullable|numeric|min:0|max:100000',
+            'dscount_price' => 'nullable|integer|min:0|max:100000|',
+            'stock' => 'nullable|integer|min:0',
+            'short_description' => 'nullable|string|min:100',
+            'long_description' => 'nullable|string',
+            'status' => 'boolean',
+            'featured' => 'boolean',
         ]);
     }
 
@@ -107,13 +105,12 @@ class ProductController extends Controller
      */
     public function destroy(string $slug)
     {
-        $result=Product::where('slug', $slug)->firstorFail();
-        if($result){
+        $result = Product::where('slug', $slug)->firstorFail();
+        if ($result) {
             $result->delete();
-            return response()->json(['message'=>'product is deleted successfully'],201);
-        }
-        else{
-            return response()->json(['message'=>'Product not found'],404);
+            return response()->json(['message' => 'product is deleted successfully'], 201);
+        } else {
+            return response()->json(['message' => 'Product not found'], 404);
         }
     }
 }
