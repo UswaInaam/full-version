@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\models\SubCategory;
+use App\Models\SubCategory;
 use Illuminate\Http\Request;
 
 class SubCategoryController extends Controller
@@ -11,7 +11,9 @@ class SubCategoryController extends Controller
      */
     public function index()
     {
-        //
+         $title="All subcategories";
+        $description="List of all subcategories";
+         return view('admin.subCategory.index',compact('title','description'));
     }
 
     /**
@@ -19,7 +21,9 @@ class SubCategoryController extends Controller
      */
     public function create()
     {
-        //
+        $title="All subcategories";
+        $description="List of all subcategories";
+         return view('admin.subCategory.create',compact('title','description'));
     }
 
     /**
@@ -57,10 +61,12 @@ class SubCategoryController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit(string $slug)
-    {
+    {$title="All subcategories";
+        $description="List of all subcategories";
+
          $SubCategory=SubCategory::where('slug',$slug)->firstorFail();
          if($SubCategory){
-            return response()->json($SubCategory);
+           return view('admin.subCategory.edit',compact('title','description','SubCategory'));
         }
         else{
             return response()->json(['message'=>'subcategory not found'],404);
