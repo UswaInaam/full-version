@@ -11,7 +11,9 @@ class ProductImageController extends Controller
      */
     public function index()
     {
-        //
+       $title="All product images";
+        $description="List of all product images";
+         return view('admin.productImage.index',compact('title','description'));
     }
 
     /**
@@ -19,7 +21,9 @@ class ProductImageController extends Controller
      */
     public function create()
     {
-        //
+        $title="All product images";
+        $description="List of all product images";
+         return view('admin.productImages.create',compact('title','description'));
     }
 
     /**
@@ -53,10 +57,12 @@ class ProductImageController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
-    {
+    { $title="All product images";
+        $description="List of all product images";
+
            $ProductImage=ProductImage::where('id',$id)->firstorFail();
          if($ProductImage){
-            return response()->json($ProductImage);
+            return view('admin.productImages.edit',compact('title','description'.'ProductImage'));
         }
         else{
             return response()->json(['message'=>'ProductImage not found'],404);
