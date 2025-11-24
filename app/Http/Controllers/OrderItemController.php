@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\models\OrderItem;
+use App\Models\OrderItem;
 use Illuminate\Http\Request;
 
 class OrderItemController extends Controller
@@ -11,7 +11,9 @@ class OrderItemController extends Controller
      */
     public function index()
     {
-        //
+          $title="All order items";
+        $description="List of all order items";
+         return view('admin.orderItem.index',compact('title','description'));
     }
 
     /**
@@ -19,7 +21,9 @@ class OrderItemController extends Controller
      */
     public function create()
     {
-        //
+         $title="All order items";
+        $description="List of all order items";
+         return view('admin.orderItem.create',compact('title','description'));
     }
 
     /**
@@ -57,9 +61,12 @@ class OrderItemController extends Controller
      */
     public function edit(string $id)
     {
+         $title="All order items";
+        $description="List of all order items";
+
          $OrderItem=OrderItem::where('id',$id)->firstorFail();
          if($OrderItem){
-            return response()->json($OrderItem);
+            return view('admin.orderItem.edit',compact('title','description','OrderItem'));
         }
         else{
             return response()->json(['message'=>'orderitem not found'],404);
