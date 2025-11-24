@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\models\CartItem;
+use App\Models\CartItem;
 use Illuminate\Http\Request;
 
 class CartItemController extends Controller
@@ -11,7 +11,9 @@ class CartItemController extends Controller
      */
     public function index()
     {
-        //
+         $title="All cart items";
+        $description="List of all cart items";
+        return view('admin.cartItem.index',compact('title','description'));
     }
 
     /**
@@ -19,7 +21,9 @@ class CartItemController extends Controller
      */
     public function create()
     {
-        //
+         $title="All cart items";
+        $description="List of all cart items";
+        return view('admin.cartItem.create',compact('title','description'));
     }
 
     /**
@@ -58,9 +62,12 @@ class CartItemController extends Controller
      */
     public function edit(string $id)
     {
+         $title="All cart items";
+        $description="List of all cart items";
+
          $CartItem=CartItem::where('id',$id)->firstorFail();
          if($CartItem){
-            return response()->json($CartItem);
+            return view('admin.cartItem.edit',compact('title','description','CartItem'));
         }
         else{
             return response()->json(['message'=>'CartItem not found'],404);
