@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\models\Category;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -11,7 +11,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+         $title="All categories";
+        $description="List of all categories";
+        return view('admin.category.index',compact('title','description'));
     }
 
     /**
@@ -19,7 +21,9 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        $title="All categories";
+        $description="List of all categories";
+        return view('admin.category.create',compact('title','description'));
     }
 
     /**
@@ -57,9 +61,12 @@ class CategoryController extends Controller
      */
     public function edit(string $slug)
     {
+         $title="All categories";
+        $description="List of all categories";
+
            $Category=Category::where('slug',$slug)->firstorFail();
          if($Category){
-            return response()->json($Category);
+         return view('admin.category.edit',compact('title','description','Category'));
         }
         else{
             return response()->json(['message'=>'Category not found'],404);
