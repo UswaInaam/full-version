@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\models\ProductVariant;
+use App\Models\ProductVariant;
 use Illuminate\Http\Request;
 
 class ProductVariantController extends Controller
@@ -11,7 +11,9 @@ class ProductVariantController extends Controller
      */
     public function index()
     {
-        //
+         $title="All product variants";
+        $description="List of all product variants";
+         return view('admin.productVariant.index',compact('title','description'));
     }
 
     /**
@@ -19,7 +21,9 @@ class ProductVariantController extends Controller
      */
     public function create()
     {
-        //
+         $title="All product variants";
+        $description="List of all product variants";
+         return view('admin.productVariant.create',compact('title','description'));
     }
 
     /**
@@ -56,10 +60,12 @@ class ProductVariantController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
-    {
+    { $title="All product variants";
+        $description="List of all product variants";
+
         $ProductVariant=ProductVariant::where('id',$id)->firstorFail();
          if($ProductVariant){
-            return response()->json($ProductVariant);
+             return view('admin.productVariant.edit',compact('title','description'.'ProductVariant'));
         }
         else{
             return response()->json(['message'=>'ProductVariant not found'],404);
