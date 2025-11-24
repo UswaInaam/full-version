@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\models\Review;
+use App\Models\Review;
 use Illuminate\Http\Request;
 
 class ReviewController extends Controller
@@ -11,7 +11,9 @@ class ReviewController extends Controller
      */
     public function index()
     {
-        //
+         $title="All reviews";
+        $description="List of all reviews";
+         return view('admin.review.index',compact('title','description'));
     }
 
     /**
@@ -19,7 +21,9 @@ class ReviewController extends Controller
      */
     public function create()
     {
-        //
+         $title="All reviews";
+        $description="List of all reviews";
+         return view('admin.review.create',compact('title','description'));
     }
 
     /**
@@ -55,10 +59,12 @@ class ReviewController extends Controller
      * Show the form for editing the specified resource.
      */
     public function edit(string $id)
-    {
+    { $title="All reviews";
+        $description="List of all reviews";
+
          $Review=Review::where('id',$id)->firstorFail();
          if($Review){
-            return response()->json($Review);
+           return view('admin.review.edit',compact('title','description','Review'));
         }
         else{
             return response()->json(['message'=>'Review not found'],404);
