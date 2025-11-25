@@ -1,30 +1,30 @@
 <nav class="navbar navbar-light">
     <div class="navbar-left">
         <div class="logo-area">
-            <a class="navbar-brand" href="{{ route('dashboard.demo_one',app()->getLocale()) }}">
+            <a class="navbar-brand" href="{{ route('dashboard.demo_one') }}">
                 <img class="dark" src="{{ asset('assets/img/logo-dark.svg') }}" alt="svg">
                 <img class="light" src="{{ asset('assets/img/logo-white.svg') }}" alt="img">
             </a>
             <a href="#" class="sidebar-toggle">
                 <img class="svg" src="{{ asset('assets/img/svg/align-center-alt.svg') }}" alt="img"></a>
         </div>
-        
+
         <div class="top-menu">
             <div class="hexadash-top-menu position-relative">
                 <ul>
                     <li class="has-subMenu">
-                        <a href="#" class="{{ Request::is(app()->getLocale().'/dashboards/*') ? 'active':'' }}">Dashboard</a>
+                        <a href="#" class="{{ Request::is('dashboards/*') ? 'active':'' }}">Dashboard</a>
                         <ul class="subMenu">
-                            <li><a class="{{ Request::is(app()->getLocale().'/dashboards/demo-one') ? 'active':'' }}" href="{{ route('dashboard.demo_one',app()->getLocale()) }}">{{ trans('menu.dashboard-demo-one') }}</a></li>
-                            <li><a class="{{ Request::is(app()->getLocale().'/dashboards/demo-two') ? 'active':'' }}" href="{{ route('dashboard.demo_two',app()->getLocale()) }}">{{ trans('menu.dashboard-demo-two') }}</a></li>
-                            <li><a class="{{ Request::is(app()->getLocale().'/dashboards/demo-three')  ? 'active':'' }}" href="{{ route('dashboard.demo_three',app()->getLocale()) }}">{{ trans('menu.dashboard-demo-three') }}</a></li>
-                            <li><a class="{{ Request::is(app()->getLocale().'/dashboards/demo-four')  ? 'active':'' }}" href="{{ route('dashboard.demo_four',app()->getLocale()) }}">{{ trans('menu.dashboard-demo-four') }}</a></li>
-                            <li><a class="{{ Request::is(app()->getLocale().'/dashboards/demo-five')  ? 'active':'' }}" href="{{ route('dashboard.demo_five',app()->getLocale()) }}">{{ trans('menu.dashboard-demo-five') }}</a></li>
-                            <li><a class="{{ Request::is(app()->getLocale().'/dashboards/demo-six')  ? 'active':'' }}" href="{{ route('dashboard.demo_six',app()->getLocale()) }}">{{ trans('menu.dashboard-demo-six') }}</a></li>
-                            <li><a class="{{ Request::is(app()->getLocale().'/dashboards/demo-seven')  ? 'active':'' }}" href="{{ route('dashboard.demo_seven',app()->getLocale()) }}">{{ trans('menu.dashboard-demo-seven') }}</a></li>
-                            <li><a class="{{ Request::is(app()->getLocale().'/dashboards/demo-eight')  ? 'active':'' }}" href="{{ route('dashboard.demo_eight',app()->getLocale()) }}">{{ trans('menu.dashboard-demo-eight') }}</a></li>
-                            <li><a class="{{ Request::is(app()->getLocale().'/dashboards/demo-nine')  ? 'active':'' }}" href="{{ route('dashboard.demo_nine',app()->getLocale()) }}">{{ trans('menu.dashboard-demo-nine') }}</a></li>
-                            <li><a class="{{ Request::is(app()->getLocale().'/dashboards/demo-ten')  ? 'active':'' }}" href="{{ route('dashboard.demo_ten',app()->getLocale()) }}">{{ trans('menu.dashboard-demo-ten') }}</a></li>
+                            <li><a class="{{ Request::is('dashboards/demo-one') ? 'active':'' }}" href="{{ route('dashboard.demo_one') }}">{{ trans('menu.dashboard-demo-one') }}</a></li>
+                            <li><a class="{{ Request::is('dashboards/demo-two') ? 'active':'' }}" href="{{ route('dashboard.demo_two') }}">{{ trans('menu.dashboard-demo-two') }}</a></li>
+                            <li><a class="{{ Request::is('dashboards/demo-three')  ? 'active':'' }}" href="{{ route('dashboard.demo_three') }}">{{ trans('menu.dashboard-demo-three') }}</a></li>
+                            <li><a class="{{ Request::is('dashboards/demo-four')  ? 'active':'' }}" href="{{ route('dashboard.demo_four') }}">{{ trans('menu.dashboard-demo-four') }}</a></li>
+                            <li><a class="{{ Request::is('dashboards/demo-five')  ? 'active':'' }}" href="{{ route('dashboard.demo_five') }}">{{ trans('menu.dashboard-demo-five') }}</a></li>
+                            <li><a class="{{ Request::is('dashboards/demo-six')  ? 'active':'' }}" href="{{ route('dashboard.demo_six') }}">{{ trans('menu.dashboard-demo-six') }}</a></li>
+                            <li><a class="{{ Request::is('dashboards/demo-seven')  ? 'active':'' }}" href="{{ route('dashboard.demo_seven') }}">{{ trans('menu.dashboard-demo-seven') }}</a></li>
+                            <li><a class="{{ Request::is('dashboards/demo-eight')  ? 'active':'' }}" href="{{ route('dashboard.demo_eight') }}">{{ trans('menu.dashboard-demo-eight') }}</a></li>
+                            <li><a class="{{ Request::is('dashboards/demo-nine')  ? 'active':'' }}" href="{{ route('dashboard.demo_nine') }}">{{ trans('menu.dashboard-demo-nine') }}</a></li>
+                            <li><a class="{{ Request::is('dashboards/demo-ten')  ? 'active':'' }}" href="{{ route('dashboard.demo_ten') }}">{{ trans('menu.dashboard-demo-ten') }}</a></li>
                         </ul>
                     </li>
                     <li class="has-subMenu">
@@ -40,10 +40,10 @@
                             <a href="#" data-layout="top">{{ trans('menu.layout-top-menu') }}</a>
                             </li>
                             <li class="layout">
-                            <a href="{{ Helper::get_translation_url( 'ar' ) }}">{{ trans('menu.layout-rtl') }}</a>
+                            <a href="{{ route(Route::currentRouteName(), 'ar') }}">{{ trans('menu.layout-rtl') }}</a>
                             </li>
                             <li class="layout">
-                            <a href="{{ Helper::get_translation_url( 'en' ) }}">{{ trans('menu.layout-ltr') }}</a>
+                            <a href="{{ route(Route::currentRouteName(), 'en') }}">{{ trans('menu.layout-ltr') }}</a>
                             </li>
                         </ul>
                     </li>
