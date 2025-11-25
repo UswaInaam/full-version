@@ -6,12 +6,12 @@
  <div class="row">
         <div class="col-lg-12">
             <div class="breadcrumb-main">
-                <h4 class="text-capitalize breadcrumb-title">Products Management</h4>
+                <h4 class="text-capitalize breadcrumb-title">order Management</h4>
                 <div class="breadcrumb-action justify-content-center flex-wrap">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#"><i class="las la-home"></i>Home</a></li>
-                           <li class="breadcrumb-item active" aria-current="page">Product management</li>
+                           <li class="breadcrumb-item active" aria-current="page">Order management</li>
                         </ol>
                     </nav>
                 </div>
@@ -24,7 +24,7 @@
                 <div class="breadcrumb-main m-0 breadcrumb-main--table justify-content-sm-between ">
                     <div class=" d-flex flex-wrap justify-content-center breadcrumb-main__wrapper">
                         <div class="d-flex align-items-center ticket__title justify-content-center me-md-25 mb-md-0 mb-20">
-                            <h4 class="text-capitalize fw-500 breadcrumb-title">Manage All Products</h4>
+                            <h4 class="text-capitalize fw-500 breadcrumb-title">Manage All Orders</h4>
                         </div>
                     </div>
                     <div class="action-btn">
@@ -82,35 +82,33 @@
                                         <span class="userDatatable-title">ID</span>
                                     </th>
                                     <th>
-                                        <span class="userDatatable-title">Category Name</span>
+                                        <span class="userDatatable-title">User Id</span>
                                     </th>
                                     <th>
-                                        <span class="userDatatable-title">Sub Category Name</span>
+                                        <span class="userDatatable-title">Order Number</span>
                                     </th>
                                     <th>
-                                        <span class="userDatatable-title">Product Name</span>
+                                        <span class="userDatatable-title">Total Amount</span>
                                     </th>
                                     <th>
-                                        <span class="userDatatable-title">Slug</span>
+                                        <span class="userDatatable-title">Discount</span>
                                     </th>
                                     <th>
-                                        <span class="userDatatable-title">Sku</span>
+                                        <span class="userDatatable-title">Shipping Cost</span>
                                     </th>
                                     <th>
-                                        <span class="userDatatable-title">Price</span>
+                                        <span class="userDatatable-title">Payment Status</span>
                                     </th>
                                     <th>
-                                        <span class="userDatatable-title">Discount price</span>
+                                        <span class="userDatatable-title">Order Status</span>
                                     </th>
                                      <th>
-                                        <span class="userDatatable-title">stock</span>
+                                        <span class="userDatatable-title">Shipping Address Id</span>
                                     </th>
                                      <th>
-                                        <span class="userDatatable-title">Status</span>
+                                        <span class="userDatatable-title">Payment Method</span>
                                     </th>
-                                     <th>
-                                        <span class="userDatatable-title">Featured</span>
-                                    </th>
+                                     
                                     <th class="actions">
                                         <span class="userDatatable-title">Actions</span>
                                     </th>
