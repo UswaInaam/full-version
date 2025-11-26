@@ -19,6 +19,8 @@ use Database\Seeders\SettingSeeder;
 use Database\Seeders\ShippingAddressSeeder;
 use Database\Seeders\SubCategorySeeder;
 use Database\Seeders\WishlistSeeder;
+use Database\Seeders\CustomerSeeder;
+use Database\Seeders\UserSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -46,6 +48,8 @@ class DatabaseSeeder extends Seeder
         $this->call(ShippingAddressSeeder::class);
         $this->call(SubCategorySeeder::class);
         $this->call(WishlistSeeder::class);
+        $this->call(CustomerSeeder::class);
+        $this->call(UserSeeder::class);
 
     }
 }
