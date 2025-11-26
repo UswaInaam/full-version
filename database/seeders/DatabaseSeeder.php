@@ -9,6 +9,7 @@ use Database\Seeders\CartSeeder;
 use Database\Seeders\CartItemSeeder;
 use Database\Seeders\CategorySeeder;
 use Database\Seeders\CouponSeeder;
+use Database\Seeders\OrderSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -26,5 +27,6 @@ class DatabaseSeeder extends Seeder
         $this->call(CartSeeder::class);
         $this->call(CategorySeeder::class);
         $this->call(CouponSeeder::class);
+        $this->call(OrderSeeder::class);
     }
 }
