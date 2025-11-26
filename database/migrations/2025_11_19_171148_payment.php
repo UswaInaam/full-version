@@ -14,11 +14,11 @@ return new class extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->integer("order_id");
-            $table->integer("payment_method");
-            $table->integer("transaction_id");
+            $table->string("payment_method");
+            $table->string("transaction_id");
 
             $table->decimal("amount", 10, 2);
-            $table->decimal("status");
+            $table->string("status");
             $table->timestamps();
         });
     }
