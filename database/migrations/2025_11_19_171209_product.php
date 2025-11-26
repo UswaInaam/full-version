@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('_products', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->integer("category_id");
             $table->integer("sub_category_id");
@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string("sku")->unique();
 
             $table->decimal("price", 10, 2);
-            $table->text("descount_price");
+            $table->text("discount_price");
             $table->integer("stock")->default(0);
             $table->text("short_description")->nullable();
             $table->text("long_description")->nullable();
