@@ -14,6 +14,7 @@ use Database\Seeders\OrderItemSeeder;
 use Database\Seeders\PaymentSeeder;
 use Database\Seeders\ProductImageSeeder;
 use Database\Seeders\ProductVariantSeeder;
+use Database\Seeders\ReviewSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -36,6 +37,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PaymentSeeder::class);
         $this->call(ProductImageSeeder::class);
         $this->call(ProductVariantSeeder::class);
+        $this->call(ReviewSeeder::class);
 
     }
 }
