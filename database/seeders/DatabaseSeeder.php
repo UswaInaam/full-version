@@ -18,6 +18,7 @@ use Database\Seeders\ReviewSeeder;
 use Database\Seeders\SettingSeeder;
 use Database\Seeders\ShippingAddressSeeder;
 use Database\Seeders\SubCategorySeeder;
+use Database\Seeders\WishlistSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -44,6 +45,7 @@ class DatabaseSeeder extends Seeder
         $this->call(SettingSeeder::class);
         $this->call(ShippingAddressSeeder::class);
         $this->call(SubCategorySeeder::class);
+        $this->call(WishlistSeeder::class);
 
     }
 }
