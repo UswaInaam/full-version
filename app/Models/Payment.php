@@ -23,4 +23,10 @@ class Payment extends Model
 
         'amount'          => 'decimal:2',  // payment amount
     ];
+    
+    public function order() {
+        return $this->belongsTo(Order::class);
+    }
+
+
 }
