@@ -31,4 +31,26 @@ class Order extends Model
         'order_number' => 'string',
         'payment_method' => 'string',
     ];
+    
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+
+    public function items() {
+        return $this->hasMany(OrderItem::class);
+    }
+
+    public function payment() {
+        return $this->hasOne(Payment::class);
+    }
+
+    public function coupon() {
+        return $this->belongsTo(Coupon::class);
+    }
+
+    public function shippingAddress() {
+        return $this->belongsTo(ShippingAddress::class);
+    }
+
+
 }
