@@ -21,4 +21,14 @@ class Category extends Model
         'status'      => 'boolean',  // usually active/inactive (1 or 0)
         'image'       => 'string',
     ];
+
+    public function subcategories() {
+        return $this->hasMany(SubCategory::class);
+    }
+
+    public function products() {
+        return $this->hasMany(Product::class);
+    }
+
+
 }
