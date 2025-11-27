@@ -31,4 +31,10 @@ class Coupon extends Model
 
         'status'           => 'boolean',     // active / inactive
     ];
+
+    public function orders() {
+        return $this->hasMany(Order::class);
+    }
+
+
 }
