@@ -31,4 +31,14 @@ class ShippingAddress extends Model
         'country'     => 'string',
         'is_default'  => 'boolean',
     ];
+    
+    public function user() {
+        return $this->belongsTo(User::class);
+    }
+
+    public function orders() {
+        return $this->hasMany(Order::class);
+    }
 }
+
+
