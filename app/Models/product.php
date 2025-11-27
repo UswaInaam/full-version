@@ -40,4 +40,34 @@ class Product extends Model
         'status'          => 'boolean',   // active/inactive
         'featured'        => 'boolean',   // 1 or 0
     ];
+    
+    public function category() {
+        return $this->belongsTo(Category::class);
+    }
+
+    public function subcategory() {
+        return $this->belongsTo(SubCategory::class);
+    }
+
+    public function images() {
+        return $this->hasMany(ProductImage::class);
+    }
+
+    public function variants() {
+        return $this->hasMany(ProductVariant::class);
+    }
+
+    public function reviews() {
+        return $this->hasMany(Review::class);
+    }
+
+    public function cartItems() {
+        return $this->hasMany(CartItem::class);
+    }
+
+    public function orderItems() {
+        return $this->hasMany(OrderItem::class);
+    }
 }
+
+
