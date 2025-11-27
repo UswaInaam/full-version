@@ -30,4 +30,26 @@ class Customer extends Model
         'address'         => 'string',
         'status'          => 'string', // active / inactive
     ];
+
+    public function carts() {
+        return $this->hasMany(Cart::class);
+    }
+
+    public function orders() {
+        return $this->hasMany(Order::class);
+    }
+
+    public function addresses() {
+        return $this->hasMany(ShippingAddress::class);
+    }
+
+    public function reviews() {
+        return $this->hasMany(Review::class);
+    }
+
+    public function wishlist() {
+        return $this->hasOne(Wishlist::class);
+    }
+
+
 }
