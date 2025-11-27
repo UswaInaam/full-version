@@ -18,4 +18,10 @@ class ProductImage extends Model
         'image_path' => 'string',
         'alt_text'   => 'string',
     ];
+    
+    public function product() {
+        return $this->belongsTo(Product::class);
+    }
 }
+
+
