@@ -15,4 +15,6 @@ class Setting extends Model
         'key'   => 'string',
         'value' => 'string',
     ];
+    
+
 }
