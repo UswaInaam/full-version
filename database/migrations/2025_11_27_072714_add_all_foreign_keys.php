@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     public function up(): void
     {
         // sub_categories → categories
@@ -76,8 +75,8 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
 
-        // wishlist → users
-        Schema::table('wishlist', function (Blueprint $table) {
+        // wishlists → users
+        Schema::table('wishlists', function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
@@ -140,7 +139,7 @@ return new class extends Migration
             $table->dropForeign(['user_id']);
         });
 
-        Schema::table('wishlist', function (Blueprint $table) {
+        Schema::table('wishlists', function (Blueprint $table) {
             $table->dropForeign(['user_id']);
         });
     }
