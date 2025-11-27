@@ -15,13 +15,14 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->string('order_number');
+            $table->unsignedBigInteger('coupon_id')->nullable();
             $table->decimal('total_amount', 10, 2);
             $table->decimal('discount');
             $table->integer('shipping_cost');
 
             $table->string('payment_status')->default("pending");
             $table->string('order_status')->default("pending");
-            $table->integer('shipping_address_id')->nullable();
+            $table->unsignedBigInteger('shipping_address_id')->nullable();
             $table->string('payment_method')->nullable();
 
             $table->timestamps();
