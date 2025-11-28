@@ -13,7 +13,8 @@ class ProductController extends Controller
     {
         $title = "All products";
         $description = "List of all products";
-        return view('admin.products.index', compact('title', 'description'));
+        $products=Product::all();
+        return view('admin.products.index', compact('title', 'description','products'));
     }
 
     /**
