@@ -40,9 +40,12 @@ class Product extends Model
         'status'          => 'boolean',   // active/inactive
         'featured'        => 'boolean',   // 1 or 0
     ];
-    
+
     public function category() {
+
         return $this->belongsTo(Category::class);
+        
+
     }
 
     public function subcategory() {
