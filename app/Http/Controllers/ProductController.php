@@ -13,8 +13,8 @@ class ProductController extends Controller
     {
         $title = "All products";
         $description = "List of all products";
-        $products=Product::all();
-        return view('admin.products.index', compact('title', 'description','products'));
+        $products = Product::all();
+        return view('admin.products.index', compact('title', 'description', 'products'));
     }
 
     /**
@@ -24,7 +24,9 @@ class ProductController extends Controller
     {
         $title = "All products";
         $description = "List of all products";
-        return view('admin.products.create', compact('title', 'description'));
+        $categories = \App\Models\Category::all();
+        $subcategories = \App\Models\SubCategory::all();
+        return view('admin.products.create', compact('title', 'description', 'categories', 'subcategories'));
     }
 
     /**
@@ -32,6 +34,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+
         $validated = $request->validate([
             // validation rules
             'category_id' => 'required|exists:categories,id',
@@ -40,13 +43,14 @@ class ProductController extends Controller
             'slug' => 'required|string|max:255|min:5|unique:products,slug',
             'sku' => 'required|string|max:255|min:10|unique:products,sku',
             'price' => 'required|numeric|min:0|max:100000',
-            'dscount_price' => 'required|integer|min:0|max:100000|',
+            'discount_price' => 'nullable|numeric|min:0|max:100000',
             'stock' => 'required|integer|min:0',
             'short_description' => 'nullable|string|min:100',
             'long_description' => 'nullable|string',
-            'status' => 'required|boolean',
-            'featured' => 'required|boolean',
+            'status' => 'nullable|boolean',
+            'featured' => 'nullable|boolean',
         ]);
+       
         $result = Product::create($validated);
         if ($result) {
             return response()->json(['message' => 'product is created successfully'], 201);
